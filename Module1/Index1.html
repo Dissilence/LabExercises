@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test html</title>
+    <link rel="stylesheet" href="index1.css" />
   </head>
+   <!-- <style>
+        body{background-color: black;}
+        h1{color: yellow;}
+    </style>
+    This is how to internally manage the style of your web page(internal) we can globally change elements and keep our work cleaner and in a single place(still not good practice)-->
   <body>
     <h1>Welcome to SE</h1>
-    This is a paragraph
-    <!--This is a self closing tag, it has the /> at the end and no children in between an opening and closing tag-->
-    <br/>
+    <p>This is a paragraph</p>
+    <!--<p style="color:red";>This is a paragraph in red</p>
+    <p style="color:green";>This is a paragraph in green</p>
+    This is a way to impliment the css inline, which is not good practice as it is hard to manage and keep track of.-->
+    <br/> <!--This is a self closing tag, it has the /> at the end and no children in between an opening and closing tag-->
     <a href="https://google.com" class="link" target="_blank">Google</a><!--This is a link which will take you to the google homepage-->
     <br/> <!-- another self closing tag, which adds a break to create space between elements on the web page-->
     <img
@@ -55,7 +63,7 @@
           </tr>
       </tr>
     </table>
-    <form action="/action_page">
+    <form action="/action_page"> <!--This creats a form which displays first name and last name, and has a submit button, however this is not programmed for input yet and just displays stored values for now-->
         <label for="firstName">First name:</label><br>
         <input type="text" id="firstName" name="firstName" value="Preshen"><br>
         <label for="lastName">Last name:</label><br>
