@@ -6,8 +6,12 @@ body {
 }
 /*Style in the header */
 header {
+    background-image: url("https://i.pinimg.com/originals/76/90/8b/76908b09072332bd62e7cf92b3042dd2.gif");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
     background-color: blueviolet;
-    padding: 30px;
+    padding: 75px;
     text-align: center;
     font-size: 35px;
     color: white;
@@ -17,8 +21,10 @@ nav {
     float: left;
     width: 30%;
     height: 300px; /* should be removed, just for playing around */
-    background: goldenrod;
+    background: purple;
     padding: 20px;
+    text-align: center;
+    color: white;
 }
 /* Style the list inside the menu */
 nav ul  {
