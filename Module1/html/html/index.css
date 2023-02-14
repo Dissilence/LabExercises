@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /*Style in the header */
 header {
@@ -11,16 +12,16 @@ header {
     background-repeat: none;
     background-size: cover;
     background-color: blueviolet;
-    padding: 75px;
+    padding: 45px;
     text-align: center;
     font-size: 35px;
-    color: white;
+    color: orange;
 }
 /* Nav is used to create two columns/boxes that float next to each other */
 nav {
     float: left;
-    width: 30%;
-    height: 300px; /* should be removed, just for playing around */
+    width: 20%;
+    height: 700px; /* should be removed, just for playing around */
     background: purple;
     padding: 20px;
     text-align: center;
@@ -32,11 +33,12 @@ nav ul  {
     padding: 0;
 }
 article{
+    text-align: center;
     float: left;
     padding: 20px;
-    width: 70%;
+    width: 60%;
     background-color: whitesmoke;
-    height: 300px; /* should be removed, just for playing around */
+    height: 700px; /* should be removed, just for playing around */
 }
 /* Clear flots after the columns */
 aside {
@@ -46,6 +48,19 @@ aside {
 footer{
     background-color: blue;
     padding: 10px;
+    text-align: center;
+    color: white;
+}
+/*nav on the right side */
+nav1{
+    float: right;
+    width: 20%;
+    height: 700px; /* should be removed, just for playing around */
+    background-image: url("https://i.pinimg.com/originals/65/eb/23/65eb2399976e294bf2fab2216ef3bc40.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    padding: 20px;
     text-align: center;
     color: white;
 }
