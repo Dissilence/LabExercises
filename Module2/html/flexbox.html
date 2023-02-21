@@ -1,84 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>This is a flexbox excersise</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="This is a flexbox excersise" />
-    <meta name="keywords" content="HTML, CSS, JavaScript" />
-    <meta name="author" content="[Your name]" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout #1</title>
     <style>
-      .background-1 {
-        background: #68b0ab;
+      body,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      ul,
+      ol,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 16px;
+      }
+      main,
+      aside {
+        min-height: 100vh;
+      }
+      main {
+        background: lightcyan;
+      }
+      aside {
+        background: lightgray;
+      }
+      section p {
+        margin: 0.5em 0;
+      }
+      footer {
+        background: #333;
+        text-align: center;
+        color: #eee;
+        font-size: 0.9em;
       }
 
-      .background-2 {
-        background: #8fc0a9;
+      nav {
+        background: black;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
       }
-
-      .background-3 {
-        background: #c8d5b9;
+      nav h1 {
+        background: black;
+        padding: 1em;
+        letter-spacing: 2px;
+        font-family: sans-serif;
+        color: white;
+        text-align: center;
       }
-
-      .background-4 {
-        background: #faf3dd;
-      }
-
-      .m-20 {
-        margin: 20px;
-      }
-
-      .h-80 {
-        height: 80px;
-      }
-
-      .h-400 {
-        height: 400px;
-      }
-
-      .w-80 {
-        width: 80px;
-      }
-      .flex-container {
+      nav ul {
         display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-evenly;
+        background: #666;
+      }
+      nav ul li a {
+        padding: 1em;
+        color: white;
+        text-transform: uppercase;
+        display: block;
+      }
+      /* common css end */
+
+      .page {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+
+      main {
+        width: calc(100% - 300px);
+      }
+
+      aside {
+        background: lightgray;
+        width: 300px;
+        position: fixed;
+        right: 0;
+      }
+
+      @media screen and (max-width: 480px) {
+        .mobile-menu-toggle {
+          display: block;
+        }
       }
     </style>
   </head>
   <body>
-    <section>
-      <h3>Basic flexbox</h3>
+    <div class="page">
+      <main>
+        <nav>
+          <h1>Layout #1 - Flexbox</h1>
+          <ul class="menu">
+            <li><a href="#html-entities">HTML Entities</a></li>
+            <li><a href="#collapsing-margins">Collapsing margins</a></li>
+            <li><a href="#links-icons">Links &amp; Icons</a></li>
+            <li>
+              <a href="#colours-backgrounds">Colours &amp; Backgrounds</a>
+            </li>
+          </ul>
+        </nav>
 
-      <div class="flex-container">
-        <div class="flex-item-1 background-1 h-80"></div>
-        <div class="flex-item-2 background-2 h-80"></div>
-        <div class="flex-item-3 background-3 h-80"></div>
-        <div class="flex-item-4 background-4 h-80"></div>
-      </div>
-    </section>
+        <section>
+          <h3>Section 1</h3>
+        </section>
 
-    <section>
-      <h3>Centering elements</h3>
-      <div class="m-20 flex-container flex-center h-400 background-4">
-        <div class="background-1 h-80 w-80"></div>
-      </div>
-    </section>
+        <section>
+          <h3>Section 2</h3>
+        </section>
+      </main>
 
-    <section>
-      <h3>Spacing elements on the opposite sides</h3>
-      <div class="flex-container flex-space-between">
-        <div class="h-80 background-1">I'm on the left</div>
-        <div class="h-80 background-2">I'm on the right</div>
-      </div>
-    </section>
+      <aside>
+        <h2>Sidebar</h2>
+      </aside>
+    </div>
 
-    <section>
-      <h3>Wrapping items</h3>
-      <div class="flex-container flex-wrap">
-        <div class="flex-basis-item-50 h-80 background-1"></div>
-        <div class="flex-basis-item-50 h-80 background-2"></div>
-        <div class="flex-basis-item-50 h-80 background-3"></div>
-        <div class="flex-basis-item-50 h-80 background-4"></div>
-      </div>
-    </section>
+    <footer>Copyright &copy; 2022</footer>
   </body>
 </html>
