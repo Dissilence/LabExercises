@@ -51,3 +51,18 @@ const user = {
 }
 
 console.log('user is ' + user)
+
+const cities_au = ['Sydney', 'Melbourne', 'Adelaide', 'Cairns', 'Brisbane']
+const cities_nz = ['Auckaland', 'Christchurch', 'Hamilton', 'Wellington', 'Queenstown']
+
+cities_au.push('Perth')
+console.log(cities_au)
+
+let lastCity = cities_au.pop()
+console.log(lastCity)
+
+cities_au.unshift('Darwin')
+console.log(cities_au)
+
+let firstCity = cities_au.shift()
+console.log(firstCity)

@@ -299,7 +299,7 @@ let andy2 = new PersonClass("Andy2",23);
 console.log(andy.canDrive);
 console.log(andy.canDrive);
 
-//Person(Marco);
+//Person
 
 console.log("Person 1");
 for (let prop in andy) {
@@ -310,3 +310,25 @@ console.log("\nPerson 2");
 for (let prop in andy2) {
   console.log(`${prop}: ${andy2[prop]}`);
 }
+
+const product2 = {
+  name: "Average Product",
+  category: "Useful Things", 
+  price: 15.00,
+  discount_price: 15,
+  gst_percent: 10,
+
+  valueOf(){
+  return this.price - (this.price * (this.discount_price/100)) + (this.price *(this.gst_percent/100))
+},
+
+toString() {
+  return `${this.name} (${this.category})`
+  }
+}
+
+let product1_qty = 2;
+let product2_qty = 5;
+
+console.log(`${product2} with quantity ${product2_qty} costs $${product2 * product2_qty}.`)
+console.log(`${product1} with quantity ${product1_qty} costs $${product1 * product1_qty}.`)
