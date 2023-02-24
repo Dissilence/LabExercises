@@ -55,14 +55,58 @@ console.log('user is ' + user)
 const cities_au = ['Sydney', 'Melbourne', 'Adelaide', 'Cairns', 'Brisbane']
 const cities_nz = ['Auckaland', 'Christchurch', 'Hamilton', 'Wellington', 'Queenstown']
 
-cities_au.push('Perth')
+//cities_au.push('Perth')
+//console.log(cities_au)
+
+//let lastCity = cities_au.pop()
+//console.log(lastCity)
+
+//cities_au.unshift('Darwin')
+//console.log(cities_au)
+
+//let firstCity = cities_au.shift()
+//console.log(firstCity)
+
+console.log('\n\n\n')
+
+//et first3Cities = cities_nz.slice(0, 3)
+//console.log(first3Cities)
+
+//let last3cities = cities_nz.slice(cities_nz.length-3)
+//console.log(last3cities)
+
+const cities = cities_au.concat(cities_nz, 'Dunedin', 'Tauranga')
+console.log(cities.toString())
+
+cities_au.splice(4, 1, 'Townsville')
 console.log(cities_au)
 
-let lastCity = cities_au.pop()
-console.log(lastCity)
+cities_nz.splice(2, 0, 'Tauranga', 'Dunedin', 'Pokeno')
+console.log(cities_nz)
 
-cities_au.unshift('Darwin')
-console.log(cities_au)
+cities.forEach((city, index) => console.log(`${index}: ${city}`))
 
-let firstCity = cities_au.shift()
-console.log(firstCity)
+const people = [
+    {firstName: 'David', lastName: 'Kim', age:'55', location: 'QLD'},
+    {firstName: 'Kelvin', lastName: 'Ng', age:'11', location: 'AKL'},
+    {firstName: 'Andy', lastName: 'Huang', age:'24', location: 'VIC'},
+    {firstName: 'Brian', lastName: 'Wong', age:'76', location: 'AKL'},
+    {firstName: 'Elvis', lastName: 'Lee', age:'22', location: 'MEL'},
+
+]
+//people.forEach(person => console.log(`${person.firstName} ${person.lastName} is ${person.age} years old`))
+
+//people.forEach((person, index) => {
+ //   console.log(index)
+ //   console.log(person.location);
+ //   console.log(person.age);
+//})
+
+let vicPerson = people.find(person => person.location =='VIC')
+console,log(vicPerson)
+
+let sPeople = people.filter(person => person.firstName.startsWith('S'))
+console.log(sPeople)
+
+let olderPeople = people.map(person => {person.age+1})
+console.log(olderPeople)
