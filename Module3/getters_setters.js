@@ -23,19 +23,28 @@ console.log(user.name)
 for (let key in user) console.log(key);
 
 let newUser = {
-    get name() {
-        return this._name;
+    //age : 30
+
+    get age() {
+        return this._age;
     },
 
-    set name(value) {
-        if (value.length < 4) {
-            console.log("Name is too short, need at least 4 characters");
+    set age(value) {
+        if (value  < 0) {
+            console.log("age cannot be less than 0");
+            return;
+        } if (value  > 120) {
+            console.log("age cannot be higher than 120");
             return;
         }
         this._name = value;
     }
 };
 
+newUser.age = 20;
+newUser.age = 130;
+newUser.age = -1;
+console.log(newUser.age);
 newUser.name = "Pete";
 console.log(newUser.name);
 
