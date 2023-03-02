@@ -154,3 +154,73 @@ let float2 = 5.25;
 let operation = '+';
 let result = currencyOperation(float1, float2, operation);
 console.log(result); 
+
+const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
+const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+console.log(colours)
+console.log(testScores) 
+
+function unique(duplicatesArray) {
+  const uniqueArray = duplicatesArray.filter((value, index, array) => array.indexOf(value) === index);
+  return uniqueArray;
+}
+
+console.log(unique(colours)); // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+console.log(unique(testScores)); // [ 55, 84, 97, 63, 32, 91, 43 ]
+
+const books = [
+  { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+  { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+  { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+  { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+  { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+
+  function getBookTitle(bookId) {
+    const book = books.find(book => book.id == bookId); return book ? book.title : null
+  }
+  
+  console.log(getBookTitle(1));
+
+  function getOldBooks() {
+    return books.filter(book => book.year < 1950);
+  
+  }
+  console.log(getOldBooks());
+
+  function addGenre() {
+    return books.map(book => ({ ...book, genre: 'classic' }));
+  }
+  
+  console.log(addGenre());
+
+  function getTitles(authorInitial) {
+    return books.filter(book => book.author.startsWith(authorInitial)).map(book => book.title);
+  }
+  
+  console.log(getTitles('F'));
+
+  function latestBook(){
+    let mostRecentYear = 1900;
+    books.forEach(book => {
+      if (book.year > mostRecentYear) mostRecentYear = book.year;
+    });
+    return books.find(book => book.year == mostRecentYear);
+  }
+  
+  console.log(latestBook());
+
+
+const birthday = new Date('1998-08-27');
+const today = new Date();
+
+let years = today.getFullYear() - birthday.getFullYear();
+let months = today.getMonth() - birthday.getMonth();
+let days = today.getDate() - birthday.getDate();
+
+console.log(`I am ${years} years, ${months} months and ${days} days old`)
+
+
+console.log('Current time is ' + today.toLocaleTimeString())
+console.log(today.getHours() + ' hours have passed so far today')
+

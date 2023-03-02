@@ -110,4 +110,3 @@ console.log(sPeople)
 
 let olderPeople = people.map(person => {person.age+1})
 console.log(olderPeople)
-
