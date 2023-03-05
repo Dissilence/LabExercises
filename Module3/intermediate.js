@@ -210,6 +210,78 @@ const books = [
   
   console.log(latestBook());
 
+const phoneBookABC = new Map() //an empty map to begin with
+phoneBookABC.set('Annabelle', '0412312343')
+phoneBookABC.set('Barry', '0433221117')
+phoneBookABC.set('Caroline', '0455221182')
+
+const phoneBookDEF = new Map([
+  ['Andy', '02183572134'],
+  ['Natalie', '0275829563'],
+  ['Duayne', '0223583157']
+]);
+phoneBookDEF.set('David', '0214958672');
+console.log(phoneBookDEF)
+
+phoneBookABC.set('Caroline', '027878375382');
+
+function printPhoneBook(contacts) {
+  for (const [name, phone] of contacts) {
+    console.log(`${name}: ${phone}`);
+  }
+}
+
+printPhoneBook(phoneBookABC);
+printPhoneBook(phoneBookDEF);
+
+const phoneBook = new Map([...phoneBookABC, ...phoneBookDEF]);
+
+const names = Array.from(phoneBook.keys());
+
+for (const name of names) {
+  console.log(name);
+}
+
+let salaries = {
+  "Timothy" : 35000,
+  "David" : 25000,
+  "Mary" : 55000,
+  "Christina" : 75000,
+  "James" : 43000
+  };
+
+function sumSalaries(salaries) {
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+
+  return sum;
+}
+
+const totalSalaries = sumSalaries(salaries);
+console.log(totalSalaries)
+
+function topEarner(salaries){
+  let highestSalary = 0;
+  let topEarnerName = "";
+
+  for (let [name, salary] of Object.entries(salaries)){
+    if (salary > highestSalary) {
+      highestSalary = salary;
+      topEarnerName = name;
+    }
+  }
+  return topEarnerName;
+}
+console.log(topEarner(salaries));
+
+const currentDate = new Date();
+console.log('current time is ' + today.toLocaleTimeSTring())
+console.log(today.getHours() + 'hours have passed so far today')
+
+
+
 
 const birthday = new Date('1998-08-27');
 const today = new Date();
@@ -223,4 +295,3 @@ console.log(`I am ${years} years, ${months} months and ${days} days old`)
 
 console.log('Current time is ' + today.toLocaleTimeString())
 console.log(today.getHours() + ' hours have passed so far today')
-
