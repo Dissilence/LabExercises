@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Moment DateTime Format</title>
+    <!-- reference Moment.js library -->
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <h2>Moment Date</h2>
+    <!-- container for Moment.js output -->
+    <div id="displayMoment"></div>
+    <h2>JavaScript Date</h2>
+    <!-- container for JavaScript Date output -->
+    <div id="displayJsDate"></div>
+    <script type="text/javascript">
+      (function () {
+        // instantiate a moment object
+        var NowMoment = moment();
+        // instantiate a JavaScript Date object
+        var NowDate = new Date();
+        // display value of moment object in #displayMoment div
+        var eDisplayMoment = document.getElementById("displayMoment");
+        eDisplayMoment.innerHTML = NowMoment;
+        // display value of Date object in #displayJsDate div
+        var eDisplayDate = document.getElementById("displayJsDate");
+        eDisplayDate.innerHTML = NowDate;
+      })();
+    </script>
+    <div class="container" style="margin: 50px auto; width: 80%">
+      <h1>birthday</h1>
+      <h2>Date 1: 27 August 1998</h2>
+      <h2>Date 2: now</h2>
+      <h2 id="output"></h2>
+    </div>
+    <script>
+      function diff() {
+        var a = moment("1998-08-27 07:32:12");
+        var b = moment();
+        diff = moment.preciseDiff(a, b, true);
+      }
+
+      var a = moment("1998-08-27 07:32:12");
+      var b = moment();
+      diff = moment.preciseDiff(a, b, true);
+
+      document.getElementById("output").inner.html = JSON.stringify(diff);
+    </script>
+  </body>
+</html>
