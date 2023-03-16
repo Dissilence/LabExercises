@@ -1,11 +1,26 @@
 const express = require('express')
-const testRoute = require('./routes/myTestRoutes');
+const friendRoute = require('./routes/friends');
+const calculatorRoute = require('./routes/calculatorRoute');
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
+
+
 const app = express()
 const port = 3000
 
-app.use('/', express.static('public'))
+app.use(express.json());
 
-app.use('/myTest', testRoute);
+app.use('/', express.static('public'))
+app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerDocument)
+    );
+
+app.use(express.json());
+
+app.use('/friends', friendRoute);
+app.use('/calculator',calculatorRoute)
 
 app.listen(port, () => {
     console.log(`Example applistening at http://localhost:${port}`)

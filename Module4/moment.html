@@ -1,6 +1,40 @@
 <html>
   <head>
-    <title>Moment DateTime Format</title>
+    <title>Moment/JS DateTime Formatting</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        background: #004a7f;
+        color: #eee;
+        font-family: sans-serif;
+        line-height: 1.4em;
+        position: relative;
+        overflow: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: #ffb27f;
+      }
+      .box {
+        border: 1px solid #ddd;
+        padding: 2em;
+        margin: 2em;
+        float: left;
+        width: calc(50% - 10em);
+        background: rgba(255, 255, 255, 0.2);
+      }
+    </style>
     <!-- reference Moment.js library -->
     <script
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
@@ -8,44 +42,123 @@
     ></script>
   </head>
   <body>
-    <h2>Moment Date</h2>
-    <!-- container for Moment.js output -->
-    <div id="displayMoment"></div>
-    <h2>JavaScript Date</h2>
-    <!-- container for JavaScript Date output -->
-    <div id="displayJsDate"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Module 4</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav"></div>
+      </div>
+    </nav>
+
+    <section class="box">
+      <h2>Moment Dates</h2>
+      <!-- container for Moment.js output -->
+      <div id="displayMoment"></div>
+    </section>
+
+    <section class="box">
+      <h2>JavaScript Dates</h2>
+      <!-- container for JavaScript Date output -->
+      <div id="displayJsDate"></div>
+    </section>
+
     <script type="text/javascript">
       (function () {
-        // instantiate a moment object
-        var NowMoment = moment();
-        // instantiate a JavaScript Date object
-        var NowDate = new Date();
-        // display value of moment object in #displayMoment div
-        var eDisplayMoment = document.getElementById("displayMoment");
-        eDisplayMoment.innerHTML = NowMoment;
+        // instantiate a moment object for right now
+        let nowMoment = moment();
+
+        // instantiate a JavaScript Date object for right now
+        let nowDate = new Date();
+
         // display value of Date object in #displayJsDate div
-        var eDisplayDate = document.getElementById("displayJsDate");
-        eDisplayDate.innerHTML = NowDate;
+        let eDisplayDate = document.getElementById("displayJsDate");
+        eDisplayDate.innerHTML = `Now: ${nowDate}`;
+
+        //to modify this date we first get the value to be changed (date, month, minute, etc), then add/subtract from it, and set the new value
+        let nextWeekJS = document.createElement("div");
+        nowDate.setDate(nowDate.getDate() + 7);
+        nextWeekJS.innerHTML = `Next Week: ${nowDate}`;
+
+        let yesterdayJS = document.createElement("div");
+        nowDate.setDate(nowDate.getDate() - 7 - 1); //to reset to now, and then subtract another day for yesterday
+        yesterdayJS.innerHTML = `Yesterday: ${nowDate}`;
+
+        let nextMonthJS = document.createElement("div");
+        nowDate.setDate(nowDate.getDate() + 1); //reset to now
+        nowDate.setMonth(nowDate.getMonth() + 1); //to reset to now, and then subtract another day for yesterday
+        nextMonthJS.innerHTML = `Next month: ${nowDate}`;
+
+        let nextMinuteJS = document.createElement("div");
+        nowDate.setMonth(nowDate.getMonth() - 1); //reset to now
+        nowDate.setMinutes(nowDate.getMinutes() + 1); //then add another minute
+        nextMinuteJS.innerHTML = `Next minute: ${nowDate}`;
+
+        eDisplayDate.appendChild(yesterdayJS);
+        eDisplayDate.appendChild(nextWeekJS);
+        eDisplayDate.appendChild(nextMonthJS);
+        eDisplayDate.appendChild(nextMinuteJS);
+
+        // display value of moment object in #displayMoment div
+        let eDisplayMoment = document.getElementById("displayMoment");
+        eDisplayMoment.innerHTML = `Now: ${nowMoment}`;
+
+        //examples of some other moment.js functions
+        //we need the .clone() because moment is MUTABLE - ie. any call like add() modifies the original value
+        //so adding a week means that nowMoment is changed to next week, and we can't just minus 1 day to get yesterday anymore
+        //so we make changes to a clone instead, leaving the original unchanged
+        let nextWeek = document.createElement("div");
+        nextWeek.innerHTML = `Next Week: ${nowMoment.clone().add(1, "week")}`;
+
+        let yesterday = document.createElement("div");
+        yesterday.innerHTML = `Yesterday: ${nowMoment.clone().add(-1, "day")}`;
+
+        let nextMonth = document.createElement("div");
+        nextMonth.innerHTML = `Next Month: ${nowMoment
+          .clone()
+          .add(1, "month")}`;
+
+        let nextMinute = document.createElement("div");
+        nextMinute.innerHTML = `Next Minute: ${nowMoment
+          .clone()
+          .add(1, "minute")}`;
+
+        eDisplayMoment.appendChild(yesterday);
+        eDisplayMoment.appendChild(nextWeek);
+        eDisplayMoment.appendChild(nextMonth);
+        eDisplayMoment.appendChild(nextMinute);
+
+        //DATE FORMATTING
+
+        let dmyJS = new Date("01/12/2016"); //December 1 2016 in DD/MM/YYYY format - but JS assumes MM/DD/YYYY and prints 12th Jan
+        let dmyJS2 = new Date(2016, 11, 1); //have to specify with separate params to make sure it's interpreted properly, remember month index starts at 0
+        let dmyMoment = moment("01/12/2016"); //December 1 2016 in DD/MM/YYYY format also assumes 12th Jan, but much easier to override
+        let dmyMoment2 = moment("01/12/2016", "DD/MM/YYYY"); //just specify the format as the second param
+
+        let dmyJSElement = document.createElement("div");
+        dmyJSElement.innerHTML = `#1 12th Jan: ${dmyJS}. #2 1st Dec: ${dmyJS2}`;
+
+        let dmyMomentElement = document.createElement("div");
+        dmyMomentElement.innerHTML = `#1 12th Jan: ${dmyMoment}. #2 1st Dec: ${dmyMoment2}`;
+
+        eDisplayMoment.appendChild(dmyMomentElement);
+        eDisplayDate.appendChild(dmyJSElement);
       })();
     </script>
-    <div class="container" style="margin: 50px auto; width: 80%">
-      <h1>birthday</h1>
-      <h2>Date 1: 27 August 1998</h2>
-      <h2>Date 2: now</h2>
-      <h2 id="output"></h2>
-    </div>
-    <script>
-      function diff() {
-        var a = moment("1998-08-27 07:32:12");
-        var b = moment();
-        diff = moment.preciseDiff(a, b, true);
-      }
-
-      var a = moment("1998-08-27 07:32:12");
-      var b = moment();
-      diff = moment.preciseDiff(a, b, true);
-
-      document.getElementById("output").inner.html = JSON.stringify(diff);
-    </script>
+    <script src="./js/navbar.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
