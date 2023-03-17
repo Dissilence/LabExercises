@@ -1,0 +1,40 @@
+    html {
+        height: 100%;
+      }
+      body {
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black;
+      }
+      .anime {
+        background-color: rgb(149, 149, 223);
+        padding: 1rem;
+        margin: 20px 20px 20px 20px;
+      }
+      .anime p {
+        text-align: justify;
+      }
+      .text {
+        color: black;
+      }
+      .text h2 {
+        font-size: 42px;
+        margin-top: -25px;
+      }
+      .text p {
+        font-size: 20px;
+      }
+      img {
+        float: left;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-top: -20px;
+      }
+      img:hover {
+        transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+      }
+    
