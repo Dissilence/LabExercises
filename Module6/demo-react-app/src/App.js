@@ -8,6 +8,8 @@ import Bike from './components/Bike';
 import HookExample from './components/HookExample';
 import HookWeather from './components/HookWeather';
 import Clock from './components/Clock';
+import Greeting from './components/Greeting'
+import EmojiChanger from './components/EmojiChanger'
 
 function formatName(name) {
   return name.first + ' ' + name.last
@@ -40,6 +42,8 @@ function App() {
       <HookExample/>
       <HookWeather/>
       <Clock/>
+      <Greeting/>
+      <EmojiChanger/>
 
     </div>
   );
