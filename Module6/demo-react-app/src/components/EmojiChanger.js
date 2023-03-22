@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Emoji from './Emoji';
 
+
 const EmojiChanger = () => {
   const [emoji, setEmoji] = useState('😄');
   

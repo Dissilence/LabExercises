@@ -8,8 +8,15 @@ import Bike from './components/Bike';
 import HookExample from './components/HookExample';
 import HookWeather from './components/HookWeather';
 import Clock from './components/Clock';
-import Greeting from './components/Greeting'
-import EmojiChanger from './components/EmojiChanger'
+import Greeting from './components/Greeting';
+import EmojiChanger from './components/EmojiChanger';
+import Login from './components/Login';
+import HookLogin from './components/HookLogin';
+import {Hello} from './components/Hello';
+import Reservations from './components/Reservations';
+import StudentList from './components/StudentList';
+import SignupDialog from './components/SignupDialog';
+import Breweries from './components/Breweries';
 
 function formatName(name) {
   return name.first + ' ' + name.last
@@ -44,7 +51,13 @@ function App() {
       <Clock/>
       <Greeting/>
       <EmojiChanger/>
-
+      <Login/>
+      <HookLogin/>
+      <Hello/>
+      <Reservations/>
+      <StudentList/>
+      <SignupDialog/>
+      <Breweries />
     </div>
   );
 }

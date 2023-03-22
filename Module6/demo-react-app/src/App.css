@@ -38,3 +38,13 @@
 }
 
 .componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
+.hideBullets { list-style: none; }
+
+.StudentList ul { display: flex; flex-wrap: wrap; }
+.Student { display: flex; align-items: center; box-shadow: 0 0 10px 0 rgba(0,0,0,0.1); margin: 1em; background: rgba(255,255,255,0.8); width: 30%; }
+.Student .details { padding-left: 0.5em; }
+
+.FancyBorder { --mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px) calc(100% - 37.00px) no-repeat,
+  radial-gradient(farthest-side,#000 98%,#0000) 0 0/2em 2em round; mask: var(--mask); padding: 2em; 
+  background: linear-gradient(135deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #ffb56b) fixed; color: white; }
+.FancyBorder-blue { background: linear-gradient(135deg, #140061, #50006E, #64018C, #6955FF, #4684FF, #1FA7FF) fixed; }
