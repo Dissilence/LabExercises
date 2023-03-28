@@ -9,7 +9,6 @@ import StudentList from "../components/StudentList"
 import PostList from '../components/Postlist'
 import Posts from '../Pages/Posts'
 import PostDetails from '../components/PostDetails'
-import Student from "../components/Student"
 import LoginMUI from '../components/LoginMUI'
 
 //special component containing all the possible routes for this app
@@ -29,11 +28,6 @@ function AppRoutes(props) {
             <Route path='/about' element={<About {...props} />} />
             
             <Route path='/login' element={<LoginMUI {...props} />} />
-
-            <Route path='/students' element={<Students {...props} />}>
-                <Route index element={<StudentList />} />
-                <Route path=":studentid" element={<StudentDetails />}/>
-            </Route>   
 
             <Route path='/posts' element={<Posts {...props} />}>
                 <Route index element={<PostList />} />

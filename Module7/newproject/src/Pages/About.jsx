@@ -1,4 +1,5 @@
 import Counter from '../components/Counter'
+import Bomb from '../components/ExplodingBomb'
 
 function About() {
 
@@ -11,6 +12,7 @@ function About() {
                 Curabitur ornare velit sit amet est laoreet placerat. Donec egestas consectetur diam ac porttitor. Ut nec posuere mi, quis fringilla nisl.
                 </p>
                 <Counter />
+                <ExplodingBomb/>
         </div>
     )
 }

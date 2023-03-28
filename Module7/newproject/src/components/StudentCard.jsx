@@ -27,8 +27,7 @@ export default function StudentCard({id, name, location, set = 'set1'}) {
         </CardContent>
         </CardActions>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small">More Info</Button>
         </CardActions>
       </Card>
     );

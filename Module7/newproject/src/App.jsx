@@ -12,6 +12,8 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import EmojiClick from "./components/Emoji"
 import SimpleDialog from './components/SimpleDialogDemo'
+import {ErrorBoundary} from 'react-error-boundary'
+import ErrorMessage from './components/ErrorMessage'
 
 function App() {
 
@@ -21,7 +23,10 @@ function App() {
       
         <UserProvider>
         <NavBar/>
+        <ErrorBoundary FallbackComponent={ErrorMessage}>
         <AppRoutes/>
+        </ErrorBoundary>
+
           <Clock/>
           <SimpleDialog/>
           <WindowResizer />
