@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import OnlineChat from './components/OnlineChat'
 import WindowResizer from './components/WindowResizer'
-import { ThemeProvider } from './context/ThemeContext';
+import { MyThemeProvider } from './context/ThemeContext';
 import { UserProvider } from './context/UserContext'
 import Clock from './components/Clock'
 import AppRoutes from './Routes/AppRoutes'
@@ -14,15 +14,17 @@ import EmojiClick from "./components/Emoji"
 import SimpleDialog from './components/SimpleDialogDemo'
 import {ErrorBoundary} from 'react-error-boundary'
 import ErrorMessage from './components/ErrorMessage'
+import { ThemeProvider } from "@mui/material/styles"
+import { purpleTheme } from './theme/PurpleTheme'
+import NavbarMui from './components/NavMui'
 
 function App() {
 
   return (
     <div className="App">
-      <ThemeProvider> { /* allow all child components to use the Theme context */ }
-      
+      <ThemeProvider theme={purpleTheme}>
         <UserProvider>
-        <NavBar/>
+        <NavbarMui/>
         <ErrorBoundary FallbackComponent={ErrorMessage}>
         <AppRoutes/>
         </ErrorBoundary>

@@ -10,6 +10,10 @@ import PostList from '../components/Postlist'
 import Posts from '../Pages/Posts'
 import PostDetails from '../components/PostDetails'
 import LoginMUI from '../components/LoginMUI'
+import SocialMediaForm from "../components/SocialMediaForm"
+import SocialPage from "../Pages/SocialPage"
+import SocialMediaList from "../components/SocialMediaList"
+import SocialMediaPost from "../components/SocialMediaPost"
 
 //special component containing all the possible routes for this app
 //any props passed into AppRoutes will also be passed onto child components using {...props}
@@ -33,6 +37,8 @@ function AppRoutes(props) {
                 <Route index element={<PostList />} />
                 <Route path=":postid" element={<PostDetails />}/>
             </Route> 
+
+            <Route path='/socialpage' element={<SocialPage/>} />
 
             <Route path='/students' element={<StudentList {...props} />}>
                 <Route index element={<StudentList />} />

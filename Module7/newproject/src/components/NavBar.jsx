@@ -10,6 +10,7 @@ function NavBar() {
                 <li><NavLink to="/login">Login</NavLink></li>
                 <li><NavLink to="/posts">Posts</NavLink></li>
                 <li><NavLink to="/students">Students</NavLink></li>
+                <li><NavLink to="/SocialPage">Social Media</NavLink></li>
             </ul>
         </div>
     )

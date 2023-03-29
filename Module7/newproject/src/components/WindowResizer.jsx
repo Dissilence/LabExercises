@@ -1,7 +1,6 @@
 import useToggle from "../hooks/useToggle";
 import useWindowResize from "../hooks/useWindowResize";
 import useOnlineStatus from '../hooks/useOnlineStatus';
-import { ThemeContext } from "../context/ThemeContext";
 import { useContext } from "react";
 
 function WindowResizer() {
@@ -9,11 +8,9 @@ function WindowResizer() {
     const [isToggled, setIsToggled] = useToggle();
     const windowSize = useWindowResize();
     const isOnline = useOnlineStatus()
-    const themeContext = useContext(ThemeContext)
-
 
     return (
-        <div className="WindowResizer componentBox" style={{backgroundColor: themeContext.theme.background, color: themeContext.theme.foreground}}>
+        <div className="WindowResizer componentBox" >
             <button onClick={setIsToggled}>{isToggled ? 'Toggled' : 'Click to Toggle'}</button>
             <div>{windowSize.width <= 768 ? 'Small Screen Detected' : 'Large Screen Detected'}</div>
             <h3>{isOnline? 'ONLINE' : 'OFFLINE'}</h3>

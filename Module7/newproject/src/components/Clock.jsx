@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from "../context/ThemeContext";
 
 function Clock(){
   const [date, setDate] = useState(new Date());
-  const themeContext = useContext(ThemeContext);
   
   function refreshClock() {
     setDate(new Date());
@@ -15,7 +13,7 @@ function Clock(){
     };
   }, []);
   return (
-    <div className="Clock componentBox" style={{backgroundColor: themeContext.theme.background, color: themeContext.theme.foreground}}>
+    <div className="Clock componentBox">
     <span>
       {date.toLocaleTimeString()}
     </span>
