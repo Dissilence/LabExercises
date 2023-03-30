@@ -17,7 +17,7 @@ function RandomBug() {
   }, []);
 
   if (!bug) {
-    return <div>Loading...</div>;
+    return <div>Loading Bug...</div>;
   }
 
   return (

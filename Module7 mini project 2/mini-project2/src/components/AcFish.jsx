@@ -17,7 +17,7 @@ function RandomFish() {
   }, []);
 
   if (!fish) {
-    return <div>Loading...</div>;
+    return <div>Loading Fish...</div>;
   }
 
   return (

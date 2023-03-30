@@ -17,7 +17,7 @@ function RandomVillager() {
   }, []);
 
   if (!villager) {
-    return <div>Loading...</div>;
+    return <div>Loading Villager...</div>;
   }
 
   return (
@@ -27,6 +27,7 @@ function RandomVillager() {
       </a>
       <h3>{villager.name['name-USen']}</h3>
       <p>{villager.personality}</p>
+      <p>Birthday: {villager.birthday}</p>
     </div>
   );
 }
