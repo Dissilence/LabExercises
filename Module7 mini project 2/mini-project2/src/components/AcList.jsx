@@ -12,7 +12,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
-import { width } from "@mui/system";
 
 function FishList() {
   const [fishes, setFishes] = useState([]);
