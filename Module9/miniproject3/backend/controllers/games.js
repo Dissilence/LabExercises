@@ -1,5 +1,5 @@
-const Game = require("../models/game");
-const axios = require("axios");
+const Game = require('../models/game');
+const axios = require('axios');
 
 // @desc    Get all games from API and save to database
 // @route   GET /api/games
@@ -7,7 +7,7 @@ const axios = require("axios");
 exports.getGames = async (req, res) => {
   try {
     // Fetch data from API
-    const response = await axios.get("https://www.freetogame.com/api/games");
+    const response = await axios.get('https://www.freetogame.com/api/games');
     console.log(response.data);
 
     // Save games to database
@@ -21,13 +21,13 @@ exports.getGames = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Games saved to the database.",
+      message: 'Games saved to the database.',
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({
       success: false,
-      message: "Server error.",
+      message: 'Server error.',
     });
   }
 };
@@ -41,7 +41,7 @@ exports.getGameById = async (req, res) => {
     if (!game) {
       return res.status(404).json({
         success: false,
-        message: "Game not found.",
+        message: 'Game not found.',
       });
     }
     res.status(200).json({
@@ -52,7 +52,7 @@ exports.getGameById = async (req, res) => {
     console.error(error);
     res.status(500).json({
       success: false,
-      message: "Server error.",
+      message: 'Server error.',
     });
   }
 };
@@ -72,7 +72,7 @@ exports.addGame = async (req, res) => {
     console.error(error);
     res.status(500).json({
       success: false,
-      message: "Server error.",
+      message: 'Server error.',
     });
   }
 };
@@ -89,7 +89,7 @@ exports.updateGameById = async (req, res) => {
     if (!game) {
       return res.status(404).json({
         success: false,
-        message: "Game not found.",
+        message: 'Game not found.',
       });
     }
     res.status(200).json({
@@ -100,7 +100,7 @@ exports.updateGameById = async (req, res) => {
     console.error(error);
     res.status(500).json({
       success: false,
-      message: "Server error.",
+      message: 'Server error.',
     });
   }
 };
@@ -114,18 +114,18 @@ exports.deleteGameById = async (req, res) => {
     if (!game) {
       return res.status(404).json({
         success: false,
-        message: "Game not found.",
+        message: 'Game not found.',
       });
     }
     res.status(200).json({
       success: true,
-      message: "Game deleted successfully.",
+      message: 'Game deleted successfully.',
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({
       success: false,
-      message: "Server error.",
+      message: 'Server error.',
     });
   }
 };
